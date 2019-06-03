@@ -18,6 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', (req, res) => {
+  res.status(200).json('hello backend-2');
+});
 app.use('/items', itemsRouter);
 
 // catch 404 and forward to error handler
